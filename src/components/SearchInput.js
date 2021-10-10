@@ -1,7 +1,14 @@
 const SearchInput = (props) => {
  
-    function handleChange(event){
-        props.onChange(event.target.value);
+    const handleChange = event =>{
+        props.onChange(event.target.value);        
+    }
+
+    // if <enter> clear input value
+    const clearInput = event =>{
+        if(event.key === "Enter"){
+            event.target.value = "";
+        }
     }
 
     return(
@@ -9,6 +16,7 @@ const SearchInput = (props) => {
             type="text"
             placeholder="Search..."
             onChange={handleChange}
+            onKeyPress={clearInput}
             value={props.value}
         />
     );
