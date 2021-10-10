@@ -7,6 +7,7 @@ function App(){
 
   const getLocation = (string) => {
     setLocation(string);
+    console.log(string);
   };
 
   return(

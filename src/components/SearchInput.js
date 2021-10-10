@@ -1,19 +1,16 @@
-import {useState} from "react"
-const SearchInput = ({onChange}) => {
-    const [text, setText] = useState("");
-
-    const search = (event) => {
-        setText(event.target.value);
-        onChange(event.target.value);          
+const SearchInput = (props) => {
+ 
+    function handleChange(event){
+        props.onChange(event.target.value);
     }
-    
-    return (
+
+    return(
         <input 
-            type="text" 
-            value={text}
+            type="text"
             placeholder="Search..."
-            onChange={search} 
-        />    
+            onChange={handleChange}
+            value={props.value}
+        />
     );
 };
 
