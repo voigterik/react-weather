@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;    
+}
+
+.b-weather-app {         
+    min-height: 100vh;
+    color: #353434;
+
+    &.m-warm {
+        color: #FFF;
+        background-image: url(../src/images/warm.jpg);
+        background-size: cover;
+    }
+
+    &.m-cold {
+        color: #FFF;
+        background-image: url(../src/images/cold.jpg);
+        background-size: cover;
+    }
+
+    .e-app-container {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+        padding: 3rem;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .6));
+    }
+
+    .e-input {
+        align-self: start;
+        width: 100%;
+        padding: 1rem;
+        font-size: 3rem;
+        background: rgba(255, 255, 255, .75);
+        border: 1px solid #f2f2f2; 
+        border-radius: 3px;
+        transition: box-shadow .2s ease-in-out;
+
+        &:focus, &:active {
+            outline: none;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+        }
+    }
+
+    .e-location {
+        padding: 2rem;
+        font-weight: 300;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+        &:empty {
+            padding: 0;
+        }
+    }
+
+    .e-temperature {
+        position: relative;
+        font-weight: 400;
+        &:before {
+            content: "Temperature: ";
+        }
+        &:after {
+            content: " °C";
+        }
+    }
+
+    .e-sky {
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}
