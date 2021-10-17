@@ -21,7 +21,6 @@ function App() {
           setQuery("");
         });    
       } catch(error) {
-        alert(error);
         const errorContainer = document.createElement("div");
         errorContainer.classList.add("b-error-container");
         errorContainer.innerHTML = "An error occured. Please try again later."
